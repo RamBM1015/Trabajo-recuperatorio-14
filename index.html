@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Ficha Arcade | Tienda de juegos retro</title>
+
+	<!-- Bootstrap 5.3 por CDN -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+	<style>
+		[data-bs-theme="dark"] {
+			--bs-body-bg: #131a26;
+			--bs-body-bg-rgb: 19, 26, 38;
+			--bs-border-color: #2c3a52;
+			--acento: #7fb7e6;
+			--acento-fuerte: #4f8fc9;
+			--violeta: #a99cf0;
+		}
+		@media (prefers-reduced-motion: no-preference) {
+			html { scroll-behavior: smooth; }
+		}
+		section[id] { scroll-margin-top: 6rem; }
+		.card { --bs-card-bg: #1b2434; }
+		.titulo-pixel { font-family: "Silkscreen", "Courier New", monospace; letter-spacing: .02em; }
+		.text-acento { color: var(--acento); }
+		.text-violeta { color: var(--violeta); }
+		.btn-acento { --bs-btn-color: #0e1622; --bs-btn-bg: var(--acento); --bs-btn-border-color: var(--acento);
+			--bs-btn-hover-color: #0e1622; --bs-btn-hover-bg: #a3cbee; --bs-btn-hover-border-color: #a3cbee; }
+		.btn-acento-out { --bs-btn-color: var(--acento); --bs-btn-border-color: var(--acento);
+			--bs-btn-hover-color: #0e1622; --bs-btn-hover-bg: var(--acento); --bs-btn-hover-border-color: var(--acento);
+			--bs-btn-disabled-color: #5f7d9a; --bs-btn-disabled-border-color: #3a4d66; }
+		.nav-link.nav-seccion { color: var(--bs-body-color); }
+		.nav-link.nav-seccion:hover, .nav-link.nav-seccion:focus-visible { color: var(--acento); }
+		.arte {
+			display: flex; align-items: center; justify-content: center;
+			font-size: 3.5rem; min-height: 10rem;
+			background: linear-gradient(135deg, #243653, #2b5062);
+		}
+		.arte-destacado { min-height: 100%; background: linear-gradient(135deg, #2a3a63, #3f4f86); }
+		.destacado { border-left: 4px solid var(--acento-fuerte) !important; }
+		.no-clic { cursor: not-allowed; }
+	</style>
+</head>
+<body>
+
+	<!-- Barra de navegación fija: los enlaces llevan a cada sección -->
+	<nav class="navbar sticky-top bg-body border-bottom border-secondary-subtle">
+		<div class="container d-flex flex-wrap gap-2">
+			<a class="navbar-brand titulo-pixel text-acento fs-4 m-0" href="#inicio">Ficha Arcade</a>
+			<ul class="navbar-nav flex-row gap-3 me-auto ms-lg-4">
+				<li class="nav-item"><a class="nav-link nav-seccion" href="#catalogo">Catálogo</a></li>
+				<li class="nav-item"><a class="nav-link nav-seccion" href="#ranking">Ranking</a></li>
+				<li class="nav-item"><a class="nav-link nav-seccion" href="#ofertas">Ofertas</a></li>
+			</ul>
+			<a class="btn btn-acento-out btn-sm" href="https://rambm1015.github.io/streeremake/" target="_blank" rel="noopener">Jugar al remake</a>
+		</div>
+	</nav>
+
+	<main id="inicio" class="container py-4 py-lg-5">
+
+		<header class="text-center mb-5">
+			<h1 class="titulo-pixel display-5 text-acento">Juegos que se juegan de a dos</h1>
+		</header>
+
+		<!-- Juego destacado: tarjeta dedicada al fighter -->
+		<section class="mb-5" aria-labelledby="destacado">
+			<div class="card destacado overflow-hidden">
+				<div class="row g-0">
+					<div class="col-12 col-md-4 col-lg-3">
+						<div class="arte arte-destacado" role="img" aria-label="Guantes de pelea">🥊</div>
+					</div>
+					<div class="col-12 col-md-8 col-lg-9">
+						<div class="card-body p-4">
+							<span class="badge text-bg-secondary mb-2">Juego destacado</span>
+							<h2 id="destacado" class="titulo-pixel card-title h3">Arena Fighters: Remake 2D</h2>
+							<p class="card-text text-body-secondary">
+								Peleas de a dos jugadores en el mismo teclado, con ataques especiales que se recargan y
+								controles propios para cada luchador. Hecho en JavaScript con Canvas.
+							</p>
+							<a class="btn btn-acento" href="https://rambm1015.github.io/streeremake/" target="_blank" rel="noopener">Jugar ahora</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Catálogo -->
+		<section id="catalogo" class="mb-5" aria-labelledby="titulo-catalogo">
+			<h2 id="titulo-catalogo" class="titulo-pixel h3 text-center mb-4">Catálogo</h2>
+			<div class="row g-4">
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="card h-100">
+						<div class="arte" role="img" aria-label="Auto de carreras">🏎️</div>
+						<div class="card-body">
+							<h3 class="card-title h5">Neon Rally 84</h3>
+							<p class="card-text text-body-secondary">Carreras de vista aérea por ciudades iluminadas, con pistas que cambian cada semana.</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between align-items-center">
+							<span class="fw-bold text-acento">$ 4.500</span>
+							<button class="btn btn-acento-out btn-sm no-clic" type="button" disabled>Agregar al carrito</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="card h-100">
+						<div class="arte" role="img" aria-label="Espada">⚔️</div>
+						<div class="card-body">
+							<h3 class="card-title h5">Dungeon Byte</h3>
+							<p class="card-text text-body-secondary">Exploración de mazmorras por turnos, con objetos al azar y una sola vida por partida.</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between align-items-center">
+							<span class="fw-bold text-acento">$ 6.200</span>
+							<button class="btn btn-acento-out btn-sm no-clic" type="button" disabled>Agregar al carrito</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-12 col-lg-4">
+					<div class="card h-100">
+						<div class="arte" role="img" aria-label="Cohete">🚀</div>
+						<div class="card-body">
+							<h3 class="card-title h5">Cosmo Blaster</h3>
+							<p class="card-text text-body-secondary">Disparos en el espacio con jefes gigantes y un modo cooperativo para dos pilotos.</p>
+						</div>
+						<div class="card-footer d-flex justify-content-between align-items-center">
+							<span class="fw-bold text-acento">$ 3.900</span>
+							<button class="btn btn-acento-out btn-sm no-clic" type="button" disabled>Agregar al carrito</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ranking semanal -->
+		<section id="ranking" class="mb-5" aria-labelledby="titulo-ranking">
+			<h2 id="titulo-ranking" class="titulo-pixel h3 text-center mb-4">Ranking de la semana</h2>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover align-middle">
+					<caption class="text-center">Los puntajes se reinician todos los lunes.</caption>
+					<thead>
+						<tr>
+							<th scope="col">Puesto</th>
+							<th scope="col">Jugador</th>
+							<th scope="col">Juego</th>
+							<th scope="col" class="text-end">Puntaje</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" class="text-acento">1</th>
+							<td>ValenKO</td>
+							<td>Arena Fighters: Remake 2D</td>
+							<td class="text-end text-acento fw-bold">48.300</td>
+						</tr>
+						<tr>
+							<th scope="row">2</th>
+							<td>Pixelita</td>
+							<td>Neon Rally 84</td>
+							<td class="text-end">41.750</td>
+						</tr>
+						<tr>
+							<th scope="row">3</th>
+							<td>MaxByte</td>
+							<td>Dungeon Byte</td>
+							<td class="text-end">39.120</td>
+						</tr>
+						<tr>
+							<th scope="row">4</th>
+							<td>Nico_8bit</td>
+							<td>Cosmo Blaster</td>
+							<td class="text-end">35.980</td>
+						</tr>
+						<tr>
+							<th scope="row">5</th>
+							<td>LuLaser</td>
+							<td>Arena Fighters: Remake 2D</td>
+							<td class="text-end">31.400</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<!-- Ofertas y asi-->
+		<section id="ofertas" aria-labelledby="titulo-ofertas">
+			<h2 id="titulo-ofertas" class="titulo-pixel h3 text-center mb-4">Ofertas</h2>
+			<div class="row g-4">
+				<div class="col-12 col-md-4">
+					<div class="card h-100 text-center p-3">
+						<h3 class="h5">Neon Rally 84</h3>
+						<span class="badge text-bg-secondary align-self-center mb-2">30% menos</span>
+						<p class="mb-1"><span class="text-body-secondary text-decoration-line-through">$ 4.500</span></p>
+						<p class="fs-4 fw-bold text-violeta mb-3">$ 3.150</p>
+						<button class="btn btn-acento-out btn-sm no-clic mt-auto" type="button" disabled>Agregar al carrito</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="card h-100 text-center p-3">
+						<h3 class="h5">Dungeon Byte</h3>
+						<span class="badge text-bg-secondary align-self-center mb-2">20% menos</span>
+						<p class="mb-1"><span class="text-body-secondary text-decoration-line-through">$ 6.200</span></p>
+						<p class="fs-4 fw-bold text-violeta mb-3">$ 4.960</p>
+						<button class="btn btn-acento-out btn-sm no-clic mt-auto" type="button" disabled>Agregar al carrito</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4">
+					<div class="card h-100 text-center p-3">
+						<h3 class="h5">Cosmo Blaster</h3>
+						<span class="badge text-bg-secondary align-self-center mb-2">50% menos</span>
+						<p class="mb-1"><span class="text-body-secondary text-decoration-line-through">$ 3.900</span></p>
+						<p class="fs-4 fw-bold text-violeta mb-3">$ 1.950</p>
+						<button class="btn btn-acento-out btn-sm no-clic mt-auto" type="button" disabled>Agregar al carrito</button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="border-top border-secondary-subtle py-4 text-center text-body-secondary">
+		<p class="mb-0">Ficha Arcade, tienda de juegos retro.</p>
+	</footer>
+
+</body>
+</html>
